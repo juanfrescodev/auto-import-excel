@@ -1,55 +1,46 @@
-# 🛠 Automatización silenciosa de importación de datos en Excel
+# 🧾 Automatización silenciosa de importación de datos en Excel
 
-Este proyecto resuelve una necesidad real en una emisora de radio: importar de forma automática, diaria y **silenciosa** datos de canciones reproducidas a una planilla Excel con macros, sin interrumpir al operador ni generar alertas o ventanas visibles.
-
----
-
-## 🎯 Objetivo
-
-Automatizar la carga de datos desde ZaraRadio a una planilla Excel con macros (`adi.xlsm`), ejecutando todo el proceso de forma invisible mediante VBScript y tareas programadas de Windows.
+Este proyecto permite automatizar la ejecución de una macro en un archivo Excel (.xlsm) mediante un script `.vbs` que se ejecuta en segundo plano desde el Programador de tareas de Windows. Su objetivo es evitar cualquier tipo de interrupción al operador durante la ejecución, haciendo el proceso 100% invisible.
 
 ---
 
-## 🧩 Componentes del proyecto
+## ⚙️ ¿Qué hace?
 
-- `auto_import.vbs`: Script principal que abre el archivo Excel, ejecuta la macro y cierra todo sin mostrar interfaz.
-- `ImportarCancionesZaraRadio.bas`: Módulo exportado de la macro en Excel.
-- `tareas_programadas.md`: Guía paso a paso para programar la ejecución automática con el Programador de tareas de Windows.
-- Capturas de pantalla: Muestran la programación de la tarea y el entorno de archivos.
-
----
-
-## ⚙️ Tecnologías utilizadas
-
-- **VBScript (.vbs)** para ejecutar procesos en segundo plano
-- **VBA (Excel macros)** para importar y procesar datos
-- **Tareas Programadas de Windows** para automatizar la ejecución diaria
-- Silenciamiento de alertas (`DisplayAlerts = False`, `Workbook.Saved = True`)
-- Manejo de argumentos (`Command = "auto"`) para controlar ejecución manual vs automática
+- Abre un archivo Excel con macros de forma oculta (sin mostrar la interfaz)
+- Ejecuta automáticamente una macro que importa datos
+- Cierra el archivo sin guardar (el guardado lo realiza la macro internamente)
+- Se ejecuta desde una **tarea programada de Windows** sin generar alertas ni interrupciones
 
 ---
 
-## 📌 Resultados
+## 📁 Archivos principales
 
-- Uso diario desde marzo de 2025 en Radio Nacional Bariloche.
-- 100% invisible para el operador.
-- Evita errores humanos.
-- Asegura cumplimiento con reportes para AADI-CAPIF.
-- Ahorra más de 30 minutos diarios al equipo operativo.
-
----
-
-## 📂 Cómo usar este proyecto
-
-1. Copiar `auto_import.vbs` al mismo directorio donde se encuentra el archivo Excel con macros.
-2. Asegurarse de que la macro se llama `ImportarCancionesZaraRadio`.
-3. Programar la tarea diaria en Windows con:
-   - Ejecutable: `C:\Windows\System32\wscript.exe`
-   - Argumentos: `"C:\ruta\a\auto_import.vbs" auto`
-4. Confirmar que todo se ejecuta correctamente en segundo plano.
+| Archivo                  | Descripción |
+|--------------------------|-------------|
+| `auto_import.vbs`        | Script que ejecuta Excel de forma oculta y llama a la macro |
+| `ImportarCancionesZaraRadio.bas` | Código fuente de la macro en VBA exportado desde Excel |
+| `tareas_programadas.md`  | Guía paso a paso para configurar la tarea automática en Windows |
+| `captura_1.png`          | Imagen ilustrativa de la planilla de excel generada |
 
 ---
 
-## 👨‍💻 Sobre el autor
+## 🖼️ Captura de pantalla
 
-Este proyecto forma parte del portfolio de [JuanFrescoDev](https://github.com/juanfrescodev), enfocado en automatización y análisis de datos aplicados a necesidades reales.  
+![Captura del programador de tareas](captura_1.png)
+
+---
+
+## 🧠 Motivación
+
+Este desarrollo nació de una necesidad real en un entorno de radio AM, donde el operador no debía ser interrumpido mientras se automatizaban tareas administrativas (importación de canciones reproducidas). El proyecto fue adaptado para integrarse sin fricciones al flujo de trabajo diario.
+
+---
+
+## 💼 Aplicación en un portfolio
+
+Aunque fue hecho para un caso específico, representa conocimientos transferibles como:
+
+- Automatización de flujos de trabajo con Windows
+- Integración entre lenguajes (VBS + VBA + Excel)
+- Diseño de soluciones sin supervis
+
