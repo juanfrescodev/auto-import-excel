@@ -1,30 +1,30 @@
 # 🧾 Automatización silenciosa de importación de datos en Excel
 
-Este proyecto permite automatizar la ejecución de una macro en un archivo Excel (.xlsm) mediante un script `.vbs` que se ejecuta en segundo plano desde el Programador de tareas de Windows. Su objetivo es evitar cualquier tipo de interrupción al operador durante la ejecución, haciendo el proceso 100% invisible.
+Este proyecto permite automatizar la ejecución de una macro en Excel (`.xlsm`) mediante un script `.vbs` que corre en segundo plano desde el Programador de tareas de Windows. El objetivo es lograr un proceso **100% invisible**, sin interrumpir al operador.
 
 ---
 
 ## ⚙️ ¿Qué hace?
 
-- Abre un archivo Excel con macros de forma oculta (sin mostrar la interfaz)
-- Ejecuta automáticamente una macro que importa datos
-- Cierra el archivo sin guardar (el guardado lo realiza la macro internamente)
-- Se ejecuta desde una **tarea programada de Windows** sin generar alertas ni interrupciones
+- Abre un archivo Excel con macros **de forma oculta** (sin mostrar la interfaz)
+- Ejecuta automáticamente una macro que **importa datos**
+- Cierra el archivo sin guardar (el guardado lo realiza la macro)
+- Se ejecuta desde el **Programador de tareas de Windows**, sin generar alertas ni ventanas
 
 ---
 
 ## 📁 Archivos principales
 
-| Archivo                  | Descripción |
-|--------------------------|-------------|
-| `auto_import.vbs`        | Script que ejecuta Excel de forma oculta y llama a la macro |
-| `ImportarCancionesZaraRadio.bas` | Código fuente de la macro en VBA exportado desde Excel |
-| `tareas_programadas.md`  | Guía paso a paso para configurar la tarea automática en Windows |
-| `captura_1.png`          | Imagen ilustrativa de la planilla de excel generada |
+| Archivo                          | Descripción |
+|----------------------------------|-------------|
+| `auto_import.vbs`                | Script que ejecuta Excel en segundo plano y llama a la macro |
+| `ImportarCancionesZaraRadio.bas`| Código fuente de la macro en VBA exportado desde Excel |
+| `tareas_programadas.md`          | Guía paso a paso para configurar la tarea automática en Windows |
+| `captura_1.png`                  | Captura de la planilla generada con la macro |
 
 ---
 
-## 🖼️ Captura de pantalla
+## 📸 Captura de pantalla
 
 ![Captura del programador de tareas](captura_1.png)
 
@@ -32,15 +32,40 @@ Este proyecto permite automatizar la ejecución de una macro en un archivo Excel
 
 ## 🧠 Motivación
 
-Este desarrollo nació de una necesidad real en un entorno de radio AM, donde el operador no debía ser interrumpido mientras se automatizaban tareas administrativas (importación de canciones reproducidas). El proyecto fue adaptado para integrarse sin fricciones al flujo de trabajo diario.
+Este desarrollo surgió de una necesidad real en un entorno de radio AM, donde era clave automatizar tareas administrativas sin interrumpir el trabajo del operador.  
+La solución fue diseñada para **integrarse sin fricciones** al flujo de trabajo diario y ejecutarse en segundo plano.
 
 ---
 
-## 💼 Aplicación en un portfolio
+## 🛠️ Requisitos
 
-Aunque fue hecho para un caso específico, representa conocimientos transferibles como:
+- Windows con Programador de tareas habilitado
+- Microsoft Excel (compatible con macros)
+- Habilitación de macros en el archivo `.xlsm`
 
-- Automatización de flujos de trabajo con Windows
+---
+
+## 🚀 Uso
+
+1. Configurar el archivo `auto_import.vbs` con la ruta del Excel que contiene la macro
+2. Programar su ejecución automática con el archivo `tareas_programadas.md` como guía
+3. Asegurarse de que el archivo Excel esté habilitado para macros
+
+---
+
+## 💼 Aplicación en portfolio
+
+Aunque fue hecho para un caso específico (Zara Radio), representa conocimientos transferibles como:
+
+- Automatización de flujos de trabajo con herramientas de oficina
 - Integración entre lenguajes (VBS + VBA + Excel)
-- Diseño de soluciones sin supervis
+- Diseño de soluciones **invisibles al usuario**
+- Pensamiento orientado a operaciones reales
 
+---
+
+## 🧑‍💻 Autor
+
+Juan Fresco - [juanfrescodev.github.io](https://juanfrescodev.github.io)
+
+---
